@@ -7,7 +7,10 @@
   }
   const classNames = (...args) => {
     let classArr = []
-    args.filter(i => i).forEach(arg => {
+    args.forEach(arg => {
+      if (!arg) {
+        return
+      }
       const argType = getType(arg)
       switch (argType) {
         case 'String':
